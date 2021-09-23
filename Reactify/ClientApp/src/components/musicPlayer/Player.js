@@ -5,7 +5,10 @@ import PlayerControls from './PlayerControls';
 const Player = (props) => {
     const audioEl = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
-
+    /*needs dependency, enen if it should be called always
+     isplaying should be dependency
+     after route change it will be dleeted from DOM but it can be executed again if it stays in DOM
+     so due to dependency it will be executed when needed*/
     useEffect(() => {
         if (isPlaying) {
             audioEl.current.play();
@@ -14,7 +17,7 @@ const Player = (props) => {
         }
     });
 
-
+    /*method should be named with lowercase if it is not a custom Hook*/
     const SkipSong = (forwards = true) => {
         if (forwards) {
             props.setCurrentSongIndex(() => {

@@ -16,7 +16,7 @@ const EventsList = () => {
     }, []);
 
     return (
-<div className="events-div">
+        <div className="events-div">
                 <ul className="card-wrapper">
                     {events.map(event =>
                         <Event

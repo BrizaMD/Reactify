@@ -13,7 +13,7 @@ const BandDetail = () => {
         "website": "",
         "biography": "",
     });
-
+    /* loading state/image/spinner etc can be used for better UX*/
     const handleSubmit = () => {
         const inputData = document.getElementById("search-band-field").value;
         axios.post("band-detail", {"InputName": inputData})

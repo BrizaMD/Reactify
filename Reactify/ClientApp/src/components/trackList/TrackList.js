@@ -8,7 +8,7 @@ const TrackList = (props) => {
     const [isResultAvailable, setResultAvailable] = useState(false);
     const [albumId, setAlbumId] = useState("");
 
-
+    
     useEffect(() => {
         axios
             .get(`track?track=${props.match.params.track}`)
@@ -19,7 +19,9 @@ const TrackList = (props) => {
                     console.log(res.data);
                 })
     }, [props.match.params.track])
-
+    /*pathname: /player + albumid, with match.params, so historyState will not be needed
+     so we will follow tha path via url
+     use historystate if it cannot be followed via url, but use url if possible*/
     const history = useHistory();
     const goToPlayer = () => history.push({
         pathname: "/player",
@@ -33,7 +35,7 @@ const TrackList = (props) => {
                 <ul className="list">
 
                     {songs.map(song => (
-
+                        /*key is needed, must have*/
                         <li className="num"
                             onClick={goToPlayer}
                             name={song.album.id}
