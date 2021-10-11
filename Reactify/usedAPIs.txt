@@ -19,3 +19,5 @@ rádió?  - https://tunein.com/broadcasters/api/
 audioDB - https://www.theaudiodb.com/api_guide.php 
 
 zeneszöveg -  https://lyricsovh.docs.apiary.io/
+
+Uncle Bob is my hero
